@@ -1,13 +1,13 @@
-//London
+//Australia/Sydney
 function updateTime() {
-  let londonElement = document.querySelector("#london");
-  if (londonElement) {
-    let londonDateElement = londonElement.querySelector(".date");
-    let londonTimeElement = londonElement.querySelector(".time");
-    let londonTime = moment().tz("Europe/London");
+  let sydneyElement = document.querySelector("#sydney");
+  if (sydneyElement) {
+    let sydneyDateElement = sydneyElement.querySelector(".date");
+    let sydneyTimeElement = sydneyElement.querySelector(".time");
+    let sydneyTime = moment().tz("Australia/Sydney");
 
-    londonDateElement.innerHTML = londonTime.format("MMMM Do YYYY");
-    londonTimeElement.innerHTML = londonTime.format(
+    sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
+    sydneyTimeElement.innerHTML = sydneyTime.format(
       "h:mm:ss [<small>]A[</small]"
     );
   }
@@ -24,10 +24,37 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small]"
     );
   }
+
+  //Accra
+  let accraElement = document.querySelector("#accra");
+  if (accraElement) {
+    let accraDateElement = accraElement.querySelector(".date");
+    let accraTimeElement = accraElement.querySelector(".time");
+    let accraTime = moment().tz("Africa/Accra");
+
+    accraDateElement.innerHTML = accraTime.format("MMMM Do YYYY");
+    accraTimeElement.innerHTML = accraTime.format(
+      "h:mm:ss [<small>]A[</small]"
+    );
+  }
+
+  //Fiji
+  let fijiElement = document.querySelector("#fiji");
+  if (fijiElement) {
+    let fijiDateElement = fijiElement.querySelector(".date");
+    let fijiTimeElement = fijiElement.querySelector(".time");
+    let fijiTime = moment().tz("Pacific/Fiji");
+
+    fijiDateElement.innerHTML = fijiTime.format("MMMM Do YYYY");
+    fijiTimeElement.innerHTML = fijiTime.format("h:mm:ss [<small>]A[</small]");
+  }
 }
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");

@@ -1,5 +1,7 @@
 body {
-  background-color: #f9f7fe;
+  background-image: url("https://media.istockphoto.com/id/526593683/photo/time-flies.jpg?s=612x612&w=0&k=20&c=azYzsu5aOl3-wWqXqaZj7UJk2HYM0oqZ8KshHnUUFxs=");
+  background-repeat: none;
+  background-size: cover;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
